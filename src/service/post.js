@@ -1,0 +1,45 @@
+import apis from "@/config/api";
+import request from "@/utils/request";
+
+// 查询岗位列表
+export function listPost(query) {
+	return request({
+		url: apis.post.listPost,
+		method: "get",
+		params: query
+	});
+}
+
+// 查询岗位详细
+export function getPost(postId) {
+	return request({
+		url: `${apis.post.getPost}/${postId}`,
+		method: "get"
+	});
+}
+
+// 新增岗位
+export function addPost(data) {
+	return request({
+		url: apis.post.addPost,
+		method: "post",
+		data
+	});
+}
+
+// 修改岗位
+export function updatePost(data) {
+	return request({
+		url: apis.post.updatePost,
+		method: "put",
+		data
+	});
+}
+
+// 删除岗位
+export function delPost(postId) {
+	return request({
+		url: `${apis.post.delPost}/${postId}`,
+		method: "delete"
+	});
+}
